@@ -1,5 +1,6 @@
 {
-  "name": "typescript",
+  "name": "typescript-phaser",
+  "description": "This provides answer to https://stackoverflow.com/questions/56612028/how-can-i-pass-data-from-a-scene-to-another-in-phaser-3/56612898#56612898",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
