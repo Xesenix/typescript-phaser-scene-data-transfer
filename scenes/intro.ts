@@ -8,19 +8,20 @@ export class IntroScene extends Phaser.Scene {
   }
 
   create() {
-    const btn = this.add.text(20, 20, 'Hello 666', { fontSize: '30px', color: '#ffffff' }).setInteractive();
+    this.createMenuButton(20, 20, 'Open A', 'A');
+    this.createMenuButton(220, 20, 'Open B', 'B');
+  }
+
+  createMenuButton(x, y, label, data) {
+    const btn = this.add.text(x, y, label, { fontSize: '30px', color: '#ffffff' }).setInteractive();
     btn.addListener('pointerup', () => {
-      console.log('game started click');
-      this.scene.start('game', 666);
+      this.scene.start('game', data);
     });
-    btn.addListener('pointerover', (ev) => {
-      console.log('game started click', ev);
+    btn.addListener('pointerover', () => {
       btn.setStyle({ color: '#f00' });
     });
-    btn.addListener('pointerout', (ev) => {
-      console.log('game started click', ev);
+    btn.addListener('pointerout', () => {
       btn.setStyle({ color: '#fff' });
     });
-
   }
 }
