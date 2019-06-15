@@ -9,6 +9,9 @@ export class GameScene extends Phaser.Scene {
 
   create(data) {
     console.log('game started', data);
-    this.add.text(20, 20, `Game ${data}`, { fontSize: '30px', color: '#ffffff' });
+    const btn = this.add.text(20, 20, `Started with: ${data}\nClick to return`, { fontSize: '30px', color: '#ffffff' }).setInteractive();;
+    btn.addListener('pointerup', () => {
+      this.scene.start('intro');
+    });
   }
 }
